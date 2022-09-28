@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SimpleFinance.Domain.Budgeting
 {
@@ -13,7 +9,10 @@ namespace SimpleFinance.Domain.Budgeting
 		public string Description { get; set; }
 		public ReadOnlyCollection<BudgetItem> Items { get; set; }
 
-		public BudgetCategory(int budgetCategoryId, string description, ReadOnlyCollection<BudgetItem> items)
+		public BudgetCategory(
+			int budgetCategoryId,
+			string description,
+			ReadOnlyCollection<BudgetItem> items)
 		{
 			BudgetCategoryId = budgetCategoryId;
 			Description = description;
