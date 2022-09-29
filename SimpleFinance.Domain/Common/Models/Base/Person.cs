@@ -1,6 +1,4 @@
-using SimpleFinance.Domain.Base;
-
-namespace SimpleFinance.Domain
+namespace SimpleFinance.Domain.Common.Models.Base
 {
 	public abstract class Person : DomainModel
 	{

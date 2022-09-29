@@ -1,0 +1,12 @@
+{
+	"files.exclude": {
+		"**/.gitignore": true,
+		"**/*.csproj": true,
+		"**/*.sln": true,
+		"**/bin": true,
+		"**/obj": true
+	},
+	"editor.insertSpaces": false,
+	"editor.formatOnSave": true,
+	"editor.formatOnType": true
+}

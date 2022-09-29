@@ -8,12 +8,16 @@ namespace SimpleFinance.Domain
 	public class CreditCardAccount
 	{
 		public int CreditCardAccountId { get; set; }
-		public string CreditCardNumer { get; set; }
+		public string CreditCardNumber { get; set; }
 		public decimal Balance { get; set; }
 		public decimal Limit { get; set; }
-		
-		public CreditCardAccount(){
 
+		public CreditCardAccount(int creditCardAccountId, string creditCardNumber, decimal balance, decimal limit)
+		{
+			CreditCardAccountId = creditCardAccountId;
+			CreditCardNumber = creditCardNumber;
+			Balance = balance;
+			Limit = limit;
 		}
 	}
 }

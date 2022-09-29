@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Bogus;
-using SimpleFinance.Domain;
-using SimpleFinance.Domain.Budgeting;
+using SimpleFinance.Domain.Budget.Models;
 
 namespace SimpleFinance.ConsoleUI
 {
@@ -13,7 +10,6 @@ namespace SimpleFinance.ConsoleUI
 
 		static void Main(string[] args)
 		{
-			int ownerIds = 0;
 			int budgetItemIds = 0;
 			int budgetCategoryIds = 0;
 			int budgetIds = 0;

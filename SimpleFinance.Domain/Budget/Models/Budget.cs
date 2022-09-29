@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using SimpleFinance.Domain.Common.Models;
+using SimpleFinance.Domain.Common.Models.Base;
 
-namespace SimpleFinance.Domain.Budget
+namespace SimpleFinance.Domain.Budget.Models
 {
 	public class Budget
 	{
