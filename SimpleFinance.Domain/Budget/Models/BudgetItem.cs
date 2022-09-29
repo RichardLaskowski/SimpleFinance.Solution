@@ -1,4 +1,4 @@
-namespace SimpleFinance.Domain.Budgeting
+namespace SimpleFinance.Domain.Budget
 {
 	public class BudgetItem
 	{

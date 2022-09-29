@@ -1,20 +1,22 @@
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
-namespace SimpleFinance.Domain.Budgeting
+namespace SimpleFinance.Domain.Budget
 {
 	public class BudgetCategory
 	{
 		public int BudgetCategoryId { get; set; }
 		public string Name { get; set; }
 		public string Description { get; set; }
-		public ReadOnlyCollection<BudgetItem> Items { get; set; }
+		public List<BudgetItem> Items { get; set; }
 
 		public BudgetCategory(
 			int budgetCategoryId,
+			string name,
 			string description,
-			ReadOnlyCollection<BudgetItem> items)
+			List<BudgetItem> items)
 		{
 			BudgetCategoryId = budgetCategoryId;
+			Name = name;
 			Description = description;
 			Items = items;
 		}
