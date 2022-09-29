@@ -1,25 +1,40 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using SimpleFinance.Domain.Common.Models.Base;
 
 namespace SimpleFinance.Domain.Budget.Models
 {
-	public class BudgetCategory
+	public class BudgetCategory : DomainModel
 	{
-		public int BudgetCategoryId { get; set; }
+		#region Fields
+
+		private List<BudgetItem> _budgetItems;
+
+		#endregion
+
+		#region Properties
+
+		public int BudgetCategoryId => _id;
 		public string Name { get; set; }
 		public string Description { get; set; }
-		public List<BudgetItem> Items { get; set; }
+		public ReadOnlyCollection<BudgetItem> BudgetItems { get; private set; }
+
+		#endregion
+
+		#region Constructors
 
 		public BudgetCategory(
-			int budgetCategoryId,
-			string name,
-			string description,
-			List<BudgetItem> items)
+				int budgetCategoryId,
+				string name,
+				string description,
+				List<BudgetItem> budgetItems) : base(budgetCategoryId)
 		{
-			BudgetCategoryId = budgetCategoryId;
 			Name = name;
 			Description = description;
-			Items = items;
+			_budgetItems = budgetItems;
+			BudgetItems = new ReadOnlyCollection<BudgetItem>(_budgetItems);
 		}
 
+		#endregion
 	}
 }

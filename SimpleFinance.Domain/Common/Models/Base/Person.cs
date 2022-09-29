@@ -2,7 +2,7 @@ namespace SimpleFinance.Domain.Common.Models.Base
 {
 	public abstract class Person : DomainModel
 	{
-		protected int PersonId { get => Id; }
+		private protected int PersonId { get => _id; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public string FullName { get => $"{FirstName} {LastName}"; }

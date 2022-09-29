@@ -1,18 +1,30 @@
+using SimpleFinance.Domain.Common.Models.Base;
+
 namespace SimpleFinance.Domain.Budget.Models
 {
-	public class BudgetItem
+	public class BudgetItem : DomainModel
 	{
-		public int BudgetItemId { get; set; }
+		#region Properties
+
+		public int BudgetItemId => _id;
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public decimal Amount { get; set; }
 
-		public BudgetItem(int budgetItemId, string name, string description, decimal amount)
+		#endregion
+
+		#region Constructors
+
+		public BudgetItem(int budgetItemId,
+				string name,
+				string description,
+				decimal amount) : base(budgetItemId)
 		{
-			BudgetItemId = budgetItemId;
 			Name = name;
 			Description = description;
 			Amount = amount;
 		}
+
+		#endregion
 	}
 }

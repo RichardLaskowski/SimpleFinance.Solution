@@ -1,12 +1,12 @@
 namespace SimpleFinance.Domain.Common.Models.Base
 {
-	public class DomainModel
+	public abstract class DomainModel
 	{
-		protected int Id { get; set; }
+		private protected int _id { get; init; }
 
-		public DomainModel(int id)
+		internal DomainModel(int id)
 		{
-			Id = id;
+			_id = id;
 		}
 	}
 }

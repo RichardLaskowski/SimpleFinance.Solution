@@ -1,12 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SimpleFinance.Domain.Common.Models.Base;
 
 namespace SimpleFinance.Domain.Finance.Models
 {
-    public class AccountOwner
-    {
-        
-    }
+	public class AccountOwner : Owner
+	{
+		public int AccountOwnerId => OwnerId;
+
+		public AccountOwner(
+			int accountOwnerId,
+			string firstName,
+			string lastName) : base(
+				accountOwnerId,
+				firstName,
+				lastName)
+		{
+		}
+	}
 }
