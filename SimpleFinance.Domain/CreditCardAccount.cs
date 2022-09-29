@@ -11,5 +11,9 @@ namespace SimpleFinance.Domain
 		public string CreditCardNumer { get; set; }
 		public decimal Balance { get; set; }
 		public decimal Limit { get; set; }
+		
+		public CreditCardAccount(){
+
+		}
 	}
 }
