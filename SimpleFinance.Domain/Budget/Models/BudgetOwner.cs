@@ -14,17 +14,22 @@ namespace SimpleFinance.Domain.Budget.Models
 
 		#endregion
 
-		#region Constructors
+		#region Constructor
 
 		public BudgetOwner(
 			int budgetOwnerId,
 			string firstName,
-			string lastName)
-			: base(
+			string lastName) : base(
 				budgetOwnerId,
 				firstName,
 				lastName)
 		{
+			GuardBudgetOwner();
+		}
+
+		private void GuardBudgetOwner()
+		{
+
 		}
 
 		#endregion

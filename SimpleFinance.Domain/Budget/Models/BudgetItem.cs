@@ -1,4 +1,6 @@
+using CommunityToolkit.Diagnostics;
 using SimpleFinance.Domain.Common.Models.Base;
+using System;
 
 namespace SimpleFinance.Domain.Budget.Models
 {
@@ -13,16 +15,25 @@ namespace SimpleFinance.Domain.Budget.Models
 
 		#endregion
 
-		#region Constructors
+		#region Constructor
 
 		public BudgetItem(int budgetItemId,
 				string name,
 				string description,
 				decimal amount) : base(budgetItemId)
 		{
+			GuardBudgetItem(name, description, amount);
+
 			Name = name;
 			Description = description;
 			Amount = amount;
+		}
+
+		private void GuardBudgetItem(string name, string description, decimal amount)
+		{
+			GuardString(name, nameof(name));
+			GuardString(description, nameof(description));
+			GuardDecimal(amount, nameof(amount));
 		}
 
 		#endregion

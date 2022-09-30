@@ -7,14 +7,11 @@
 			"type": "process",
 			"args": [
 				"build",
-				"${workspaceFolder}/SimpleFinance.Solution.sln",
+				"${workspaceFolder}/simplefinance.console/SimpleFinance.Console.csproj",
 				"/property:GenerateFullPaths=true",
 				"/consoleloggerparameters:NoSummary"
 			],
-			"problemMatcher": "$msCompile",
-			"group": {
-				"kind": "build"
-			}
+			"problemMatcher": "$msCompile"
 		},
 		{
 			"label": "publish",
@@ -22,7 +19,7 @@
 			"type": "process",
 			"args": [
 				"publish",
-				"${workspaceFolder}/SimpleFinance.Solution.sln",
+				"${workspaceFolder}/simplefinance.console/SimpleFinance.Console.csproj",
 				"/property:GenerateFullPaths=true",
 				"/consoleloggerparameters:NoSummary"
 			],
@@ -34,9 +31,18 @@
 			"type": "process",
 			"args": [
 				"watch",
-				"run",
-				"--project",
-				"${workspaceFolder}/SimpleFinance.Console"
+				"test",
+				"${workspaceFolder}/SimpleFinance.Solution.sln"
+			],
+			"problemMatcher": "$msCompile"
+		},
+				{
+			"label": "test",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"test",
+				"${workspaceFolder}/SimpleFinance.Solution.sln"
 			],
 			"problemMatcher": "$msCompile"
 		}

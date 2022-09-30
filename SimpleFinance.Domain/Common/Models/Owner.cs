@@ -12,6 +12,12 @@ namespace SimpleFinance.Domain.Common.Models.Base
 				firstName,
 				lastName)
 		{
+			GuardOwner();
+		}
+
+		private protected void GuardOwner()
+		{
+
 		}
 	}
 }
