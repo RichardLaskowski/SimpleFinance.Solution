@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using SimpleFinance.Domain.Budgets.Models.Interfaces;
 using SimpleFinance.Domain.Common.Models.Base;
 
-namespace SimpleFinance.Domain.Budget.Models
+namespace SimpleFinance.Domain.Budgets.Models
 {
-	public class BudgetCategory : DomainModel
+	public class BudgetCategory : DomainModel, IBudgetCategory
 	{
 		#region Fields
 
-		private List<BudgetItem> _budgetItems;
+		private List<IBudgetItem> _budgetItems;
 
 		#endregion
 
@@ -18,7 +19,7 @@ namespace SimpleFinance.Domain.Budget.Models
 		public int BudgetCategoryId => _id;
 		public string Name { get; set; }
 		public string Description { get; set; }
-		public ReadOnlyCollection<BudgetItem> BudgetItems { get; private set; }
+		public ReadOnlyCollection<IBudgetItem> BudgetItems { get; private set; }
 
 		#endregion
 
@@ -28,20 +29,20 @@ namespace SimpleFinance.Domain.Budget.Models
 				int budgetCategoryId,
 				string name,
 				string description,
-				List<BudgetItem> budgetItems) : base(budgetCategoryId)
+				List<IBudgetItem> budgetItems) : base(budgetCategoryId)
 		{
 			GuardBudgetCategory(name, description, budgetItems);
 			Name = name;
 			Description = description;
 			_budgetItems = budgetItems;
-			BudgetItems = new ReadOnlyCollection<BudgetItem>(_budgetItems);
+			BudgetItems = new ReadOnlyCollection<IBudgetItem>(_budgetItems);
 		}
 
-		private void GuardBudgetCategory(string name, string description, List<BudgetItem> budgetItems)
+		private void GuardBudgetCategory(string name, string description, List<IBudgetItem> budgetItems)
 		{
 			GuardString(name, nameof(name));
 			GuardString(description, nameof(description));
-			GuardCollection<BudgetItem>(budgetItems, nameof(budgetItems));
+			GuardCollection<IBudgetItem>(budgetItems, nameof(budgetItems));
 		}
 
 

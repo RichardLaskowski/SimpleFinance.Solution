@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SimpleFinance.Domain.Budgets.Models.Interfaces;
 using SimpleFinance.Domain.Common.Models.Base;
 
-namespace SimpleFinance.Domain.Budget.Models
+namespace SimpleFinance.Domain.Budgets.Models
 {
-	public class BudgetOwner : Owner
+	public class BudgetOwner : Owner, IBudgetOwner
 	{
 		#region Properties
 

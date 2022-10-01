@@ -11,7 +11,7 @@ namespace SimpleFinance.Domain.XUnitTests
 	{
 		[Theory]
 		[InlineData(-1, "F", "L")]
-		public void Owner_WhenIdLessThanZero_ShouldThrowArgumentOutOfRangeException(int ownerId, string ownerFirstName, string ownerLastName)
+		public void Owner_WithIdLessThanZero_ShouldThrowArgumentOutOfRangeException(int ownerId, string ownerFirstName, string ownerLastName)
 		{
 			//Arrange
 			Owner testOwner;
@@ -25,7 +25,7 @@ namespace SimpleFinance.Domain.XUnitTests
 
 		[Theory]
 		[InlineData(0, null, "L")]
-		public void Owner_WhenFirstNameNull_ShouldThrowNullArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
+		public void Owner_WithFirstNameNull_ShouldThrowNullArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
 		{
 			//Arrange
 			Owner testOwner;
@@ -39,7 +39,7 @@ namespace SimpleFinance.Domain.XUnitTests
 
 		[Theory]
 		[InlineData(0, "", "L")]
-		public void Owner_WhenFirstNameIsEmpty_ShouldThrowArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
+		public void Owner_WithFirstNameEmpty_ShouldThrowArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
 		{
 			//Arrange
 			Owner testOwner;
@@ -53,7 +53,7 @@ namespace SimpleFinance.Domain.XUnitTests
 
 		[Theory]
 		[InlineData(0, " ", "L")]
-		public void Owner_WhenFirstNameIsWhiteSpace_ShouldThrowArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
+		public void Owner_WithFirstNameAsWhiteSpace_ShouldThrowArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
 		{
 			//Arrange
 			Owner testOwner;
@@ -67,7 +67,7 @@ namespace SimpleFinance.Domain.XUnitTests
 
 		[Theory]
 		[InlineData(0, "F", "")]
-		public void Owner_WhenLastNameIsEmpty_ShouldThrowArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
+		public void Owner_WithLastNameEmpty_ShouldThrowArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
 		{
 			//Arrange
 			Owner testOwner;
@@ -81,7 +81,7 @@ namespace SimpleFinance.Domain.XUnitTests
 
 		[Theory]
 		[InlineData(0, "F", " ")]
-		public void Owner_WhenLastNameIsWhiteSpace_ShouldThrowArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
+		public void Owner_WithLastNameAsWhiteSpace_ShouldThrowArgumentException(int ownerId, string ownerFirstName, string ownerLastName)
 		{
 			//Arrange
 			Owner testOwner;
@@ -92,7 +92,5 @@ namespace SimpleFinance.Domain.XUnitTests
 			//Assert
 			Assert.Throws<ArgumentException>(testOwnerConstructor);
 		}
-
-
 	}
 }

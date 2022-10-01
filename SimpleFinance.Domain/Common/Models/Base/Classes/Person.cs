@@ -1,3 +1,4 @@
+using System;
 using System.Xml.Schema;
 using CommunityToolkit.Diagnostics;
 
@@ -23,8 +24,19 @@ namespace SimpleFinance.Domain.Common.Models.Base
 
 		private protected void GuardPerson(string firstName, string lastName)
 		{
-			GuardString(firstName, nameof(firstName));
-			GuardString(lastName, nameof(lastName));
+			try
+			{
+				GuardString(firstName, nameof(firstName));
+				GuardString(lastName, nameof(lastName));
+			}
+			catch (ArgumentNullException innerException)
+			{
+				throw new ArgumentNullException(innerException.Message, innerException);
+			}
+			catch (ArgumentException innerException)
+			{
+				throw new ArgumentException(innerException.Message, innerException);
+			}
 		}
 	}
 }

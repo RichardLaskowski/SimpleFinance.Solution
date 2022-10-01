@@ -8,7 +8,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace SimpleFinance.Domain.Common.Models.Base
 {
-	public abstract class DomainModel 
+	public abstract class DomainModel
 	{
 		private protected int _id { get; init; }
 
@@ -28,12 +28,14 @@ namespace SimpleFinance.Domain.Common.Models.Base
 		{
 			Guard.IsNotNullOrEmpty(value, name);
 			Guard.IsNotWhiteSpace(value, name);
+			Guard.IsOfType<string>(value, name);
 		}
 
 		protected void GuardInt(int value, string name)
 		{
 			Guard.IsNotNull<int>(value, name);
 			Guard.IsGreaterThanOrEqualTo<int>(value, 0, name);
+			Guard.IsOfType<int>(value, name);
 		}
 
 		protected void GuardCollection<T>(ICollection<T> values, string name)
@@ -45,6 +47,7 @@ namespace SimpleFinance.Domain.Common.Models.Base
 		{
 			Guard.IsNotNull<decimal>(value);
 			Guard.IsGreaterThanOrEqualTo<decimal>(value, 0, name);
+			Guard.IsOfType<decimal>(value, name);
 		}
 	}
 }
