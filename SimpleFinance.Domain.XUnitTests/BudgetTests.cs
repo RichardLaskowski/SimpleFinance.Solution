@@ -45,5 +45,20 @@ namespace SimpleFinance.Domain.XUnitTests
 			//Assert
 			Assert.IsType<Budget>(actual);
 		}
+
+		[Fact]
+		public void CreateNewCategory_WithName_ShouldCreateNewCategoryContainingName()
+		{
+			//Arrange
+
+
+			//Act
+
+
+			//Assert
+
+		}
+
+
 	}
 }

@@ -34,17 +34,27 @@ namespace SimpleFinance.Domain.Budgets.Models
 				List<IBudgetCategory> budgetCategories,
 				List<IBudgetOwner> budgetOwners) : base(budgetId)
 		{
-			GuardBudget(name, description, budgetCategories, budgetOwners);
+			GuardBudget(
+				name,
+				description,
+				budgetCategories,
+				budgetOwners);
 
 			Name = name;
 			Description = description;
+
 			_budgetCategories = budgetCategories;
 			_budgetOwners = budgetOwners;
+
 			BudgetCategories = new ReadOnlyCollection<IBudgetCategory>(_budgetCategories);
 			BudgetOwners = new ReadOnlyCollection<IBudgetOwner>(_budgetOwners);
 		}
 
-		private void GuardBudget(string name, string description, List<IBudgetCategory> budgetCategories, List<IBudgetOwner> budgetOwners)
+		private void GuardBudget(
+			string name,
+			string description,
+			List<IBudgetCategory> budgetCategories,
+			List<IBudgetOwner> budgetOwners)
 		{
 			try
 			{
@@ -66,7 +76,12 @@ namespace SimpleFinance.Domain.Budgets.Models
 			List<IBudgetCategory> categories = new List<IBudgetCategory>();
 			List<IBudgetOwner> owners = new List<IBudgetOwner>();
 
-			newBudget = new Budget(id, name, description, categories, owners);
+			newBudget = new Budget(
+				id,
+				name,
+				description,
+				categories,
+				owners);
 
 			return newBudget;
 		}

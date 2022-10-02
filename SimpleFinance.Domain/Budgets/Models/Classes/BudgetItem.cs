@@ -33,9 +33,24 @@ public class BudgetItem : DomainModel, IBudgetItem
 
 	private void GuardBudgetItem(string name, string description, decimal amount)
 	{
-		GuardString(name, nameof(name));
-		GuardString(description, nameof(description));
-		GuardDecimal(amount, nameof(amount));
+		try
+		{
+			GuardString(name, nameof(name));
+			GuardString(description, nameof(description));
+			GuardDecimal(amount, nameof(amount));
+		}
+		catch (ArgumentNullException innerException)
+		{
+			throw new ArgumentNullException(innerException.Message, innerException);
+		}
+		catch (ArgumentOutOfRangeException innerException)
+		{
+			throw new ArgumentOutOfRangeException(innerException.Message, innerException);
+		}
+		catch (ArgumentException innerException)
+		{
+			throw new ArgumentException(innerException.Message, innerException);
+		}
 	}
 
 	#endregion

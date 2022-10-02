@@ -1,13 +1,13 @@
-﻿using SimpleFinance.Domain.Budgets.Models.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SimpleFinance.Domain.Budgets.Models.Interfaces;
 
 namespace SimpleFinance.Domain.XUnitTests.Mocks
 {
-	internal class BudgetItemFake : IBudgetItem
+	internal class FakeBudgetItem : IBudgetItem
 	{
 		public int BudgetItemId { get; set; }
 
@@ -15,7 +15,7 @@ namespace SimpleFinance.Domain.XUnitTests.Mocks
 		public string Description { get; set; }
 		public decimal Amount { get; set; }
 
-		public BudgetItemFake()
+		public FakeBudgetItem()
 		{
 
 		}

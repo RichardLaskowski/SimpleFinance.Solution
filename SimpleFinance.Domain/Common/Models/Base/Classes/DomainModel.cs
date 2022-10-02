@@ -11,6 +11,8 @@ namespace SimpleFinance.Domain.Common.Models.Base
 	public abstract class DomainModel
 	{
 		private protected int _id { get; init; }
+		protected DateTime LastChangeDate { get; set; }
+		protected string LastChangeUser { get; set; }
 
 		protected DomainModel(int id = 0)
 		{
@@ -40,7 +42,7 @@ namespace SimpleFinance.Domain.Common.Models.Base
 
 		protected void GuardCollection<T>(ICollection<T> values, string name)
 		{
-			Guard.HasSizeGreaterThanOrEqualTo<T>(values, 1, name);
+			Guard.HasSizeGreaterThanOrEqualTo<T>(values, 0, name);
 		}
 
 		protected void GuardDecimal(decimal value, string name)

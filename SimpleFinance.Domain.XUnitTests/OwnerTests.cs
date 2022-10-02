@@ -11,7 +11,7 @@ namespace SimpleFinance.Domain.XUnitTests
 	{
 		[Theory]
 		[InlineData(-1, "F", "L")]
-		public void Owner_WithIdLessThanZero_ShouldThrowArgumentOutOfRangeException(int ownerId, string ownerFirstName, string ownerLastName)
+		public void Owner_WithIdNegative_ShouldThrowArgumentOutOfRangeException(int ownerId, string ownerFirstName, string ownerLastName)
 		{
 			//Arrange
 			Owner testOwner;
