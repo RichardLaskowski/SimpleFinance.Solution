@@ -1,14 +1,8 @@
-﻿using SimpleFinance.Domain.Budgets.Models.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SimpleFinance.Domain.Budgets.Models;
 
-namespace SimpleFinance.Domain.XUnitTests.Mocks
+namespace SimpleFinance.Domain.XUnitTests.Fakes;
+
+internal class BudgetOwnerFake : IBudgetOwner
 {
-	internal class BudgetOwnerFake : IBudgetOwner
-	{
-		public int BudgetOwnerId => throw new NotImplementedException();
-	}
+    public int BudgetOwnerId => throw new NotImplementedException();
 }

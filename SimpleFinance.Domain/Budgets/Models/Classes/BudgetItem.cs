@@ -1,6 +1,5 @@
 using System;
 using CommunityToolkit.Diagnostics;
-using SimpleFinance.Domain.Budgets.Models.Interfaces;
 using SimpleFinance.Domain.Common.Models.Base;
 
 namespace SimpleFinance.Domain.Budgets.Models;

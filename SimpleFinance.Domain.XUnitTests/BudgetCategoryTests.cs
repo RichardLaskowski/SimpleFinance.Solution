@@ -1,4 +1,5 @@
 using SimpleFinance.Domain.Budgets.Models;
+using SimpleFinance.Domain.XUnitTests.Fakes;
 using Xunit;
 
 namespace SimpleFinance.Domain.XUnitTests;

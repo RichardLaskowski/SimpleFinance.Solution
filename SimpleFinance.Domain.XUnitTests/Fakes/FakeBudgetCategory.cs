@@ -1,11 +1,5 @@
 ﻿using SimpleFinance.Domain.Budgets.Models;
-using SimpleFinance.Domain.Budgets.Models.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleFinance.Domain.XUnitTests.Fakes
 {
@@ -18,8 +12,12 @@ namespace SimpleFinance.Domain.XUnitTests.Fakes
 
         public ReadOnlyCollection<IBudgetItem> BudgetItems { get; set; }
 
-        public BudgetCategoryFake()
+        public BudgetCategoryFake(int id = default, string name = "", string description = "")
         {
+            BudgetCategoryId = id;
+            Name = name;
+            Description = description;
+            BudgetItems = new ReadOnlyCollection<IBudgetItem>(new List<IBudgetItem>());
 
         }
     }

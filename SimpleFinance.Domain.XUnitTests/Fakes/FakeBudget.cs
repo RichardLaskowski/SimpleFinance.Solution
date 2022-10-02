@@ -11,8 +11,12 @@ internal class FakeBudget : IBudget
     public ReadOnlyCollection<IBudgetCategory> BudgetCategories { get; set; }
     public ReadOnlyCollection<IBudgetOwner> BudgetOwners { get; set; }
 
-    internal FakeBudget()
+    internal FakeBudget(int id = default, string name = "", string description = "")
     {
-
+        BudgetId = id;
+        Name = name;
+        Description = description;
+        BudgetCategories = new ReadOnlyCollection<IBudgetCategory>(new List<IBudgetCategory>());
+        BudgetOwners = new ReadOnlyCollection<IBudgetOwner>(new List<IBudgetOwner>());
     }
 }

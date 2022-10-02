@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using SimpleFinance.Domain.Budgets.Models.Interfaces;
 using SimpleFinance.Domain.Common.Enums;
 using SimpleFinance.Domain.Common.Models.Base;
 

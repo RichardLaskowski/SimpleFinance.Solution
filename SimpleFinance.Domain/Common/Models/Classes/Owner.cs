@@ -1,3 +1,5 @@
+using SimpleFinance.Domain.Common.Models.Base;
+
 namespace SimpleFinance.Domain.Common.Models;
 
 /// <summary>
