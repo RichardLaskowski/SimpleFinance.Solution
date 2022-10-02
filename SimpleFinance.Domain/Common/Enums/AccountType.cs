@@ -1,8 +1,18 @@
 namespace SimpleFinance.Domain.Common.Enums
 {
-	public enum AccountType
-	{
-		Checking,
-		Savings
-	}
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum AccountType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// Checking,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Savings
+    }
 }

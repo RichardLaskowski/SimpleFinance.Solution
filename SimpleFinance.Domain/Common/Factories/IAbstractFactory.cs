@@ -5,8 +5,16 @@ using System.Threading.Tasks;
 
 namespace SimpleFinance.Domain.Common.Factories
 {
-	public interface IAbstractFactory<T>
-	{
-		T Create();
-	}
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public interface IAbstractFactory<T>
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        T Create();
+    }
 }

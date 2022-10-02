@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 
 namespace SimpleFinance.Domain.Transactions.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Deposit
     {
-        
+
     }
 }

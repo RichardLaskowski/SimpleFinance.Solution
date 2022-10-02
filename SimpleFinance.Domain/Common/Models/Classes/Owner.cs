@@ -1,23 +1,35 @@
-namespace SimpleFinance.Domain.Common.Models.Base
+namespace SimpleFinance.Domain.Common.Models;
+
+/// <summary>
+/// 
+/// </summary>
+public class Owner : Person
 {
-	public class Owner : Person
-	{
-		public int OwnerId => PersonId;
+    /// <summary>
+    /// 
+    /// </summary>
+    public int OwnerId => PersonId;
 
-		public Owner(
-			int ownerId,
-			string firstName,
-			string lastName) : base(
-				ownerId,
-				firstName,
-				lastName)
-		{
-			GuardOwner();
-		}
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="ownerId"></param>
+    /// <param name="firstName"></param>
+    /// <param name="lastName"></param>
+    /// <returns></returns>
+    public Owner(
+        int ownerId,
+        string firstName,
+        string lastName) : base(
+            ownerId,
+            firstName,
+            lastName)
+    {
+        GuardOwner();
+    }
 
-		private protected void GuardOwner()
-		{
+    private protected void GuardOwner()
+    {
 
-		}
-	}
+    }
 }

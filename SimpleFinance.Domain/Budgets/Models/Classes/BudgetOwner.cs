@@ -7,32 +7,50 @@ using SimpleFinance.Domain.Common.Models.Base;
 
 namespace SimpleFinance.Domain.Budgets.Models
 {
-	public class BudgetOwner : Owner, IBudgetOwner
-	{
-		#region Properties
+    /// <summary>
+    /// 
+    /// </summary>
+    public class BudgetOwner : Owner, IBudgetOwner
+    {
+        #region Properties
 
-		public int BudgetOwnerId => OwnerId;
+        /// <summary>
+        /// 
+        /// </summary>
+        public int BudgetOwnerId => OwnerId;
 
-		#endregion
+        #endregion
 
-		#region Constructor
+        #region Constructor
 
-		public BudgetOwner(
-			int budgetOwnerId,
-			string firstName,
-			string lastName) : base(
-				budgetOwnerId,
-				firstName,
-				lastName)
-		{
-			GuardBudgetOwner();
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="budgetOwnerId"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <returns></returns>
+        public BudgetOwner(
+            int budgetOwnerId,
+            string firstName,
+            string lastName) : base(
+                budgetOwnerId,
+                firstName,
+                lastName)
+        {
+            GuardBudgetOwner();
+        }
 
-		private void GuardBudgetOwner()
-		{
+        #endregion
 
-		}
+        #region Private Methods
 
-		#endregion
-	}
+        private void GuardBudgetOwner()
+        {
+
+        }
+
+        #endregion
+
+    }
 }

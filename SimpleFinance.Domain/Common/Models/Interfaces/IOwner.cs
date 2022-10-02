@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SimpleFinance.Domain.Common.Models.Base
+namespace SimpleFinance.Domain.Common.Models;
+
+/// <summary>
+/// 
+/// </summary>
+public interface IOwner
 {
-    public interface IOwner
-    {
-        
-    }
+
 }

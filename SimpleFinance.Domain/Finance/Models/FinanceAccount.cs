@@ -7,25 +7,58 @@ using SimpleFinance.Domain.Common.Models.Base;
 
 namespace SimpleFinance.Domain.Finance.Models
 {
-	public class FinanceAccount : Account
-	{
-		public int FinanceAccountId => AccountId;
-		public string FinanceAccountNumber => AccountNumber;
-		public string AccountName => Name;
-		public string AccountDescription => Description;
-		public ReadOnlyCollection<Owner> AccountOwners { get; private set; }
-		public FinanceAccount(int financeAccountId,
-						string financeAccountNumber,
-						string name,
-						string description,
-						List<Owner> owners) : base(
-							financeAccountId,
-							financeAccountNumber,
-							name,
-							description,
-							owners)
-		{
-			AccountOwners = Owners;
-		}
-	}
+    /// <summary>
+    /// 
+    /// </summary>
+    public class FinanceAccount : Account
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public int FinanceAccountId => AccountId;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string FinanceAccountNumber => AccountNumber;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string AccountName => Name;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string AccountDescription => Description;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        public ReadOnlyCollection<Owner> AccountOwners { get; private set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="financeAccountId"></param>
+        /// <param name="financeAccountNumber"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="owners"></param>
+        /// <returns></returns>
+        public FinanceAccount(int financeAccountId,
+                        string financeAccountNumber,
+                        string name,
+                        string description,
+                        List<Owner> owners) : base(
+                            financeAccountId,
+                            financeAccountNumber,
+                            name,
+                            description,
+                            owners)
+        {
+            AccountOwners = Owners;
+        }
+    }
 }

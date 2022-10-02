@@ -6,11 +6,33 @@ using System.Threading.Tasks;
 
 namespace SimpleFinance.Domain.Budgets.Models.Interfaces
 {
-	public interface IBudgetCategory
-	{
-		int BudgetCategoryId { get; }
-		string Name { get; set; }
-		string Description { get; set; }
-		ReadOnlyCollection<IBudgetItem> BudgetItems { get; }
-	}
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IBudgetCategory
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        int BudgetCategoryId { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        string Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        ReadOnlyCollection<IBudgetItem> BudgetItems { get; }
+    }
 }

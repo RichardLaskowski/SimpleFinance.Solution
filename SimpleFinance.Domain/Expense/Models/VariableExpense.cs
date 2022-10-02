@@ -1,11 +1,23 @@
 namespace SimpleFinance.Domain.Expense.Models
 {
-	public class VariableExpense : Expense
-	{
-		public int VariableExpenseId { get => ExpenseId; }
+    /// <summary>
+    /// 
+    /// </summary>
+    public class VariableExpense : Expense
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        public int VariableExpenseId { get => ExpenseId; }
 
-		public VariableExpense(int variableExpenseId) : base(variableExpenseId)
-		{
-		}
-	}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="variableExpenseId"></param>
+        /// <returns></returns>
+        public VariableExpense(int variableExpenseId) : base(variableExpenseId)
+        {
+        }
+    }
 }

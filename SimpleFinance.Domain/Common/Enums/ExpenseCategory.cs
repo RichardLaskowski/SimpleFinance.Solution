@@ -1,7 +1,10 @@
 namespace SimpleFinance.Domain.Common.Enums
 {
-	public enum ExpenseCategory
-	{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum ExpenseCategory
+    {
 
-	}
+    }
 }

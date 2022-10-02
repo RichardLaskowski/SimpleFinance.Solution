@@ -4,10 +4,21 @@
 		"**/*.sln": true,
 		"**/bin": true,
 		"**/obj": true,
-		"**/.gitignore": true
+		"**/.gitignore": true,
+		"**/api": true,
+		"**/apidoc":true,
+		"**/articles":true,
+		"**/src": true,
+		"**/docfx.json":true,
+		"**/index.md": true,
+		"**/log.txt": true,
+		"**/toc.yml": true,
+		"**/_site": true,
+		"**/images": true
 	},
 	"editor.insertSpaces": false,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
-	"explorer.fileNesting.enabled": false
+	"explorer.fileNesting.enabled": false,
+	"editor.defaultFormatter": "ms-dotnettools.csharp"
 }

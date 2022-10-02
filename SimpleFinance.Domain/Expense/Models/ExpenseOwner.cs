@@ -6,36 +6,32 @@ using SimpleFinance.Domain.Common.Models.Base;
 
 namespace SimpleFinance.Domain.Expense.Models
 {
-	public class ExpenseOwner : Owner
-	{
-		public int ExpenseOwnerId => OwnerId;
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ExpenseOwner : Owner
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public int ExpenseOwnerId => OwnerId;
 
-		public ExpenseOwner(
-			int expenseOwnerId,
-			string firstName,
-			string lastName) : base(
-				expenseOwnerId,
-				firstName,
-				lastName)
-		{
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="expenseOwnerId"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <returns></returns>
+        public ExpenseOwner(
+            int expenseOwnerId,
+            string firstName,
+            string lastName) : base(
+                expenseOwnerId,
+                firstName,
+                lastName)
+        {
 
-		}
-
-		public override bool Equals(object obj)
-		{
-			return base.Equals(obj);
-		}
-
-		public override int GetHashCode()
-		{
-			return base.GetHashCode();
-		}
-
-		public override string ToString()
-		{
-			return base.ToString();
-		}
-
-
-	}
+        }
+    }
 }
