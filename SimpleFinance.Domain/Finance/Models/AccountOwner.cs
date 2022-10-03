@@ -1,4 +1,4 @@
-using SimpleFinance.Domain.Common.Models.Base;
+using SimpleFinance.Domain.Common.Models;
 
 namespace SimpleFinance.Domain.Finance.Models
 {

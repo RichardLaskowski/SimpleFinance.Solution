@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using SimpleFinance.Domain.Common.Models;
 using SimpleFinance.Domain.Common.Models.Base;
 
 namespace SimpleFinance.Domain.Finance.Models

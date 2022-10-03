@@ -13,10 +13,11 @@ namespace SimpleFinance.Domain.Budgets.Models
     public class BudgetCategory : DomainModel, IBudgetCategory
     {
         #region Fields
+
         private const string DEFAULT_ITEM_NAME = "New Item";
         private const string DEFAULT_ITEM_DESCRIPTION = "Enter an item description.";
         private const decimal DEFAULT_ITEM_AMOUNT = 0;
-
+        private const int DEFAULT_ID = 0;
         private List<IBudgetItem> _budgetItems;
 
         #endregion

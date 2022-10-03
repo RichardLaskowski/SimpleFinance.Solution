@@ -6,171 +6,171 @@ using SimpleFinance.Domain.Common.Models.Base;
 
 namespace SimpleFinance.Domain.Budgets.Models
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class Budget : DomainModel, IBudget
-    {
-        #region Constants
+	/// <summary>
+	/// 
+	/// </summary>
+	public class Budget : DomainModel, IBudget
+	{
+		#region Constants
 
-        private const int DEFAULT_ID = 0;
-        private const string DEFAULT_CATEGORY_DESCRIPTION = "Enter a category description.";
-        private const string DEFAULT_CATEGORY_NAME = "New Category";
-        private const decimal DEFAULT_CATEGORY_ALLOTED_AMOUNT = 0;
-        private const Month DEFAULT_CATEGORY_MONTH = Month.January;
-        private const string DEFAULT_BUDGET_NAME = "New Budget";
-        private const string DEFAULT_BUDGET_DESCRIPTION = "Enter a budget description.";
+		private const int DEFAULT_ID = 0;
+		private const string DEFAULT_CATEGORY_DESCRIPTION = "Enter a category description.";
+		private const string DEFAULT_CATEGORY_NAME = "New Category";
+		private const decimal DEFAULT_CATEGORY_ALLOTED_AMOUNT = 0;
+		private const Month DEFAULT_CATEGORY_MONTH = Month.January;
+		private const string DEFAULT_BUDGET_NAME = "New Budget";
+		private const string DEFAULT_BUDGET_DESCRIPTION = "Enter a budget description.";
 
-        #endregion
+		#endregion
 
-        #region Fields
+		#region Fields
 
-        private List<IBudgetCategory> _budgetCategories;
-        private List<IBudgetOwner> _budgetOwners;
+		private List<IBudgetCategory> _budgetCategories;
+		private List<IBudgetOwner> _budgetOwners;
 
-        #endregion
+		#endregion
 
-        #region Properties
+		#region Properties
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        public int BudgetId { get => _id; }
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <value></value>
+		public int BudgetId { get => _id; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        public string Name { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <value></value>
+		public string Name { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        public string Description { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <value></value>
+		public string Description { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        public ReadOnlyCollection<IBudgetCategory> BudgetCategories { get; private set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <value></value>
+		public ReadOnlyCollection<IBudgetCategory> BudgetCategories { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        public ReadOnlyCollection<IBudgetOwner> BudgetOwners { get; private set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <value></value>
+		public ReadOnlyCollection<IBudgetOwner> BudgetOwners { get; private set; }
 
-        #endregion
+		#endregion
 
-        #region Constructor
+		#region Constructor
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="budgetId"></param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="budgetCategories"></param>
-        /// <param name="budgetOwners"></param>
-        /// <returns></returns>
-        public Budget(
-                int budgetId,
-                string name,
-                string description,
-                List<IBudgetCategory> budgetCategories,
-                List<IBudgetOwner> budgetOwners) : base(budgetId)
-        {
-            GuardBudget(
-                name,
-                description,
-                budgetCategories,
-                budgetOwners);
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="budgetId"></param>
+		/// <param name="name"></param>
+		/// <param name="description"></param>
+		/// <param name="budgetCategories"></param>
+		/// <param name="budgetOwners"></param>
+		/// <returns></returns>
+		public Budget(
+				int budgetId,
+				string name,
+				string description,
+				List<IBudgetCategory> budgetCategories,
+				List<IBudgetOwner> budgetOwners) : base(budgetId)
+		{
+			GuardBudget(
+				name,
+				description,
+				budgetCategories,
+				budgetOwners);
 
-            Name = name;
-            Description = description;
+			Name = name;
+			Description = description;
 
-            _budgetCategories = budgetCategories;
-            _budgetOwners = budgetOwners;
+			_budgetCategories = budgetCategories;
+			_budgetOwners = budgetOwners;
 
-            BudgetCategories = new ReadOnlyCollection<IBudgetCategory>(_budgetCategories);
-            BudgetOwners = new ReadOnlyCollection<IBudgetOwner>(_budgetOwners);
-        }
+			BudgetCategories = new ReadOnlyCollection<IBudgetCategory>(_budgetCategories);
+			BudgetOwners = new ReadOnlyCollection<IBudgetOwner>(_budgetOwners);
+		}
 
-        #endregion
+		#endregion
 
-        #region Public Methods
+		#region Public Methods
 
-        /// <summary>
-        /// Creates a new budget with default values.
-        /// </summary>
-        /// <returns>Budget</returns>
-        public static Budget Create()
-        {
-            int id = DEFAULT_ID;
-            string name = DEFAULT_BUDGET_NAME;
-            string description = DEFAULT_BUDGET_DESCRIPTION;
+		/// <summary>
+		/// Creates a new budget with default values.
+		/// </summary>
+		/// <returns>Budget</returns>
+		public static Budget Create()
+		{
+			int id = DEFAULT_ID;
+			string name = DEFAULT_BUDGET_NAME;
+			string description = DEFAULT_BUDGET_DESCRIPTION;
 
-            List<IBudgetCategory> categories = new List<IBudgetCategory>();
-            List<IBudgetOwner> owners = new List<IBudgetOwner>();
+			List<IBudgetCategory> categories = new List<IBudgetCategory>();
+			List<IBudgetOwner> owners = new List<IBudgetOwner>();
 
-            Budget emptyBudget = new Budget(
-                id,
-                name,
-                description,
-                categories,
-                owners);
+			Budget emptyBudget = new Budget(
+				id,
+				name,
+				description,
+				categories,
+				owners);
 
-            return emptyBudget;
-        }
+			return emptyBudget;
+		}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="allotedAmount"></param>
-        /// <param name="month"></param>
-        public void CreateNewCategory(
-            string name = DEFAULT_CATEGORY_NAME,
-            string description = DEFAULT_CATEGORY_DESCRIPTION,
-            decimal allotedAmount = DEFAULT_CATEGORY_ALLOTED_AMOUNT,
-            Month month = DEFAULT_CATEGORY_MONTH)
-        {
-            int id = DEFAULT_ID;
-            List<IBudgetItem> items = new List<IBudgetItem>();
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="description"></param>
+		/// <param name="allotedAmount"></param>
+		/// <param name="month"></param>
+		public void CreateNewCategory(
+			string name = DEFAULT_CATEGORY_NAME,
+			string description = DEFAULT_CATEGORY_DESCRIPTION,
+			decimal allotedAmount = DEFAULT_CATEGORY_ALLOTED_AMOUNT,
+			Month month = DEFAULT_CATEGORY_MONTH)
+		{
+			int id = DEFAULT_ID;
+			List<IBudgetItem> items = new List<IBudgetItem>();
 
-            BudgetCategory newCategory = new BudgetCategory(id, name, description, items);
-            newCategory.AllottedAmount = allotedAmount;
-            newCategory.Month = month;
+			BudgetCategory newCategory = new BudgetCategory(id, name, description, items);
+			newCategory.AllottedAmount = allotedAmount;
+			newCategory.Month = month;
 
-            _budgetCategories.Add(newCategory);
-        }
+			_budgetCategories.Add(newCategory);
+		}
 
-        #endregion
+		#endregion
 
-        #region Private Methods
-        private void GuardBudget(
-            string name,
-            string description,
-            List<IBudgetCategory> budgetCategories,
-            List<IBudgetOwner> budgetOwners)
-        {
-            try
-            {
-                GuardString(name, nameof(name));
-                GuardString(description, nameof(description));
-                GuardCollection<IBudgetCategory>(budgetCategories, nameof(budgetCategories));
-                GuardCollection<IBudgetOwner>(budgetOwners, nameof(budgetOwners));
-            }
-            catch (ArgumentException innerException)
-            {
-                string message = innerException.Message;
-                throw new ArgumentException(message, innerException);
-            }
-        }
+		#region Private Methods
+		private void GuardBudget(
+			string name,
+			string description,
+			List<IBudgetCategory> budgetCategories,
+			List<IBudgetOwner> budgetOwners)
+		{
+			try
+			{
+				GuardString(name, nameof(name));
+				GuardString(description, nameof(description));
+				GuardCollection<IBudgetCategory>(budgetCategories, nameof(budgetCategories));
+				GuardCollection<IBudgetOwner>(budgetOwners, nameof(budgetOwners));
+			}
+			catch (ArgumentException innerException)
+			{
+				string message = innerException.Message;
+				throw new ArgumentException(message, innerException);
+			}
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

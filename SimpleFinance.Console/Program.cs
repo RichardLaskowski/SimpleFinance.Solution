@@ -30,56 +30,7 @@ internal class Program
 
     static void Main(string[] args)
     {
-        //Budgets = Seed();
-        string response = string.Empty;
 
-
-        Console.WriteLine("Menu");
-        Console.WriteLine("1. Create budget");
-        Console.WriteLine("2. List budgets");
-        Console.WriteLine("3. Edit budget");
-        Console.WriteLine("4. Delete budget");
-
-        response = Console.ReadLine();
-
-        switch (response)
-        {
-            case "1":
-                CreateNewBudget();
-                break;
-            case "2":
-                ListAllBudgets();
-                break;
-            case "3":
-                SelectABudgetToEdit();
-                break;
-            case "4":
-                SelectABudgetToDelete();
-                break;
-            default:
-                break;
-        }
-    }
-
-    private static Budget CreateNewBudget()
-    {
-        Budget newBudget = budgetFaker.Generate();
-        return newBudget;
-    }
-    private static void ListAllBudgets()
-    {
-        foreach (Budget budget in Budgets)
-        {
-            System.Console.WriteLine($"{budget.BudgetId}: {budget.Name}");
-        }
-    }
-    private static void SelectABudgetToEdit()
-    {
-        throw new NotImplementedException();
-    }
-    private static void SelectABudgetToDelete()
-    {
-        throw new NotImplementedException();
     }
     //private static List<Budget> Seed()
     //{
