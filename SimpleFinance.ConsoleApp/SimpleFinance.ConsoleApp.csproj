@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="System.Collections" Version="4.3.0"/>
+    <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.0.0"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleFinance.Domain\SimpleFinance.Domain.csproj"/>
+  </ItemGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <StartupObject>SimpleFinance.ConsoleApp.Program</StartupObject>
+  </PropertyGroup>
+</Project>

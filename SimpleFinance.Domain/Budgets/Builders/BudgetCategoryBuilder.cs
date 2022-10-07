@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using SimpleFinance.Domain.Budgets.Models;
 using SimpleFinance.Domain.Common.Enums;
+using BudgetCategory = SimpleFinance.Domain.Budgets.Models.BudgetCategory;
 
 namespace SimpleFinance.Domain.Budgets.Builders;
 
@@ -16,6 +18,8 @@ internal class BudgetCategoryBuilder
 		0,
 		_name,
 		_description,
+		_allottedAmount,
+		_month,
 		_items);
 
 	public BudgetCategoryBuilder WithName(string value)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
 using SimpleFinance.Domain.Common.Enums;
 using SimpleFinance.Domain.Common.Models.Base;
 
@@ -130,23 +131,47 @@ namespace SimpleFinance.Domain.Budgets.Models
 		/// </summary>
 		/// <param name="name"></param>
 		/// <param name="description"></param>
+		/// <returns></returns>
+		public static Budget Create(string name, string description)
+		{
+			int id = DEFAULT_ID;
+
+			List<IBudgetCategory> categories = new List<IBudgetCategory>();
+			List<IBudgetOwner> owners = new List<IBudgetOwner>();
+
+			Budget emptyBudget = new Budget(
+				id,
+				name,
+				description,
+				categories,
+				owners);
+
+			return emptyBudget;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="description"></param>
 		/// <param name="allotedAmount"></param>
 		/// <param name="month"></param>
 		public void CreateNewCategory(
 			string name = DEFAULT_CATEGORY_NAME,
 			string description = DEFAULT_CATEGORY_DESCRIPTION,
-			decimal allotedAmount = DEFAULT_CATEGORY_ALLOTED_AMOUNT,
+			decimal allottedAmount = DEFAULT_CATEGORY_ALLOTED_AMOUNT,
 			Month month = DEFAULT_CATEGORY_MONTH)
 		{
 			int id = DEFAULT_ID;
 			List<IBudgetItem> items = new List<IBudgetItem>();
 
-			BudgetCategory newCategory = new BudgetCategory(id, name, description, items);
-			newCategory.AllottedAmount = allotedAmount;
-			newCategory.Month = month;
+			BudgetCategory newCategory = new BudgetCategory(id, name, description, allottedAmount, month, items);
 
 			_budgetCategories.Add(newCategory);
 		}
+
+		public void EditCategory(BudgetCategory updateCategory) { }
+		public void DeleteCategory(BudgetCategory deletionCategory) { }
 
 		#endregion
 
